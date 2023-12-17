@@ -3,10 +3,12 @@ import { slateEditor } from "@payloadcms/richtext-slate";
 import { buildConfig } from "payload/config";
 import { webpackBundler } from "@payloadcms/bundler-webpack";
 import path from "path";
+import Users from "./collections/users";
+
 
 export default buildConfig({
     serverURL: process.env.NEXT_PUBLIC_SERVER_URL || '',
-    collections: [],
+    collections: [Users],
     routes: {
         admin: '/sell',
     },
