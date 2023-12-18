@@ -3,8 +3,12 @@ import { slateEditor } from "@payloadcms/richtext-slate";
 import { buildConfig } from "payload/config";
 import { webpackBundler } from "@payloadcms/bundler-webpack";
 import path from "path";
-import Users from "./collections/users";
+import Users from "./collections/Users";
+import dotenv,{ configDotenv } from "dotenv";
 
+dotenv.config({
+    path:path.resolve(__dirname, "../")
+})
 
 export default buildConfig({
     serverURL: process.env.NEXT_PUBLIC_SERVER_URL || '',
@@ -13,6 +17,7 @@ export default buildConfig({
         admin: '/sell',
     },
     admin: {
+        user: "users",
         bundler: webpackBundler(),
         meta:{
             titleSuffix: "- DigitalMarket",
