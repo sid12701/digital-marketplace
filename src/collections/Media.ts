@@ -60,7 +60,7 @@ export const Media: CollectionConfig = {
         position: "centre",
       },
     ],
-    mimeTypes: ["iamge/*"],
+    // mimeTypes: ["iamge/*"],
   },
   fields: [
     {
