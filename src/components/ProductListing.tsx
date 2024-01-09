@@ -32,7 +32,7 @@ const ProductListing = ({product,index}: ProductListingProps) => {
     if(!product||!isVisible) return <ProductPlaceholder />
 
     if(isVisible && product) {
-        return <Link className={cn('invisible h-full w-full cursor-pointer group/main',{'visible animte-in fade-in-5' : isVisible,} )} href={`/products/${product.id}`}>
+        return <Link className={cn('invisible h-full w-full cursor-pointer group/main',{'visible animte-in fade-in-5' : isVisible,} )} href={`/product/${product.id}`}>
             <div className="flex flex-col w-full">
                 <ImageSlider urls={validUrls}/>
                 <h3 className="mt-4 font-medium text-sm text-gray-700">
