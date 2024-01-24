@@ -56,7 +56,6 @@ const Page = ()=>{
     })
     const onSubmit = ({email, password} : TAuthCredentialsValidator) =>{
         signIn({email, password})
-        console.log(email, password)
     }
     return(
         <>
@@ -105,7 +104,6 @@ const Page = ()=>{
                         {isSeller ? (
                             <Button onClick={continueAsBuyer} variant='secondary' disabled={isLoading}>Continue as customer</Button>
                         ) :  <Button onClick={continueAsSeller} variant='secondary' disabled={isLoading}>Continue as seller</Button>}
-
                     </div>    
                 </div>
             </div>

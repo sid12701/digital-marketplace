@@ -92,7 +92,7 @@ const Page = () =>{
 
                                                     <div className="mt-4 sm:mt-0 sm:pt-9 w-20">
                                                         <div className="absolute right-0 top-0 ">
-                                                            <Button aria-label='remove product' onClick={()=> removeItem(product.id)} variant='ghost'><X className="h-5 w-5" aria-aria-hidden='true'/> </Button>
+                                                            <Button aria-label='remove product' onClick={()=> removeItem(product.id)} variant='ghost'><X className="h-5 w-5" aria-hidden='true'/> </Button>
                                                         </div>
                                                     </div>
                                             </div>
