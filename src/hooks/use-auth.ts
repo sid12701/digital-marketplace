@@ -1,28 +1,32 @@
-import router from "next/router";
-import { toast } from "sonner";
+import { useRouter } from 'next/navigation'
+import { toast } from 'sonner'
 
 export const useAuth = () => {
-    const signOut = async () => {
-        try{
-            const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/logout`,
-            {
-                method:"POST",
-                credentials:'include',
-                headers:{
-                    'Content-Type': 'application/json',
-                },
-            })
+  const router = useRouter()
 
-            if(!res.ok) throw new Error();
-
-            toast.success("Signed out succesfully")
-
-            router.push("/sign-in")
-
+  const signOut = async () => {
+    try {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/logout`,
+        {
+          method: 'POST',
+          credentials: 'include',
+          headers: {
+            'Content-Type': 'application/json',
+          },
         }
-        catch(err){
-            toast.error("Couldnt sign out, please try again")
-        }
+      )
+
+      if (!res.ok) throw new Error()
+
+      toast.success('Signed out successfully')
+
+      router.push('/sign-in')
+      router.refresh()
+    } catch (err) {
+      toast.error("Couldn't sign out, please try again.")
     }
-    return {signOut}
+  }
+
+  return { signOut }
 }

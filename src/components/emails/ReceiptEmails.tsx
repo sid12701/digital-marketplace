@@ -3,6 +3,8 @@ import { Product } from "../../payload-types";
 import {Body,Container, Column, Head, Hr,Html, Img, Link, Preview, Row, Section, Text} from "@react-email/components";
 import {format} from "date-fns"
 import {render} from "@react-email/components"
+import React from 'react';
+
 
 interface ReceiptEmailProps {
   email: string;

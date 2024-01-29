@@ -41,11 +41,10 @@ const ThankYouPage = async ({ searchParams }: PageProps) => {
   const orderUserId =
     typeof order.user === "string" ? order.user : order.user.id;
 
-  // if (orderUserId !== user?.id) {
-  //   return redirect(`/sign-in?origin=thank-you?orderId=${order.id}`
-  //   );
-  // }
-
+    if (orderUserId !== user?.id) {
+      return redirect(`/sign-in?origin=thank-you&orderId=${order.id}`);
+    }
+    
   console.log(orderUserId, user?.id);
 
   const products = order.products as Product[];
